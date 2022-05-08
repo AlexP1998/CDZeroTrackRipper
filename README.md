@@ -5,4 +5,5 @@ Currently a work in progress. To use, insert a CD and select the drive directory
 # Credits
 
 Alex Puckett - Main program design
+
 Michel Helms, Idael Cardoso, Larry Osterman - Original CD-reading routine
