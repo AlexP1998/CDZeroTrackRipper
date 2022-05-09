@@ -70,6 +70,7 @@
             // 
             // sourceDirectoryComboBox
             // 
+            this.sourceDirectoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sourceDirectoryComboBox.FormattingEnabled = true;
             this.sourceDirectoryComboBox.Items.AddRange(new object[] {
             "--Please select a drive.--"});
@@ -131,6 +132,7 @@
             this.Controls.Add(this.startRipButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainGUI";
             this.Text = "CD Track 0 Ripping Tool";
             this.Load += new System.EventHandler(this.MainGUI_Load);
