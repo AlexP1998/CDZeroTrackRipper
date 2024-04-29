@@ -68,7 +68,6 @@ BOOL CAudioCD::Open( char Drive )
 	{
 		CDTRACK NewTrack;
 		bool TrackZero = false;
-		//Maybe I could add an "if" statement here to check if the track is 0, and if it is, check if a zero track exists. If it does, set TrackZero to true and add it to the TOC. If not, skip.
 		if (i == 0)
 		{
 			NewTrack.Address = 0; //Start at the very beginning of the CD
@@ -81,14 +80,12 @@ BOOL CAudioCD::Open( char Drive )
 		}
 		//If track is 0, the track to see if track 0 exists will be here. It'll check to see how long the pregap (the sectors between the ToC and Track 1) is. If it's less than maybe four sectors, track 0 does not exist.
 		//If it's longer, we can assume there is a track 0. Set NewTrack.Address to the sector after the ToC and set the length to the beginning of Track 1.
-		//Make this as "if track does not equal zero" or something. Also make a bool varible that denotes the existance of a track 0 and have it run if set to false. Since this is for doing the zero track, I may just have it return false or something
 		if (TrackZero == false)
 		{
 			NewTrack.Address = AddressToSectors(Table.TrackData[i].Address);
 			NewTrack.Length = AddressToSectors(Table.TrackData[i + 1].Address) - NewTrack.Address;
 		}
 		m_aTracks.push_back( NewTrack );
-		//Why even waste CPU cycles getting the other tracks? Maybe later I'll just set this to run once.
 	}
 
 
